@@ -17,7 +17,9 @@ ssid_regex: .*freifunk.*
 offloader_mac:
     SiteName: 00:00:00:00:00:00
     SiteName2: 00:00:00:00:00:00
-prefix: 
+site_prefix: 
+    SiteName: ffwp-Node-Prefix-
+    SiteName2: ffwp2-Node-Prefix-
 nodelist: https://MAPURL/data/meshviewer.json
 version: v5
 ssl_verify: True
