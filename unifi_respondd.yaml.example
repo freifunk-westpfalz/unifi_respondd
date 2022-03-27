@@ -1,13 +1,13 @@
 controller_url: unifi.lan
 controller_port: 8443
-username: ubnt
+username: ubnt # Username and password for the Unifi Controller
 password: ubnt
 ssid_regex: .*freifunk.*
 offloader_mac:
-    SiteName: 00:00:00:00:00:00
+    SiteName: 00:00:00:00:00:00 # SiteName refers to the Site in the Unifi Controller, Mac to the freifunk Offloader
     SiteName2: 00:00:00:00:00:00
 nodelist: https://MAPURL/data/meshviewer.json
-prefix: 
+prefix: # If the APs name should get a prefix, add it here
 version: v5
 ssl_verify: True
 multicast_enabled: false
@@ -15,7 +15,7 @@ multicast_address: ff05::2:1001
 multicast_port: 1001
 unicast_address: fe80::68ff:94ff:fe00:1504
 unicast_port: 10001
-interface: eth0
+interface: eth0 # Network interface of the freifunk Network
 verbose: true
 logging_config:
     formatters:
