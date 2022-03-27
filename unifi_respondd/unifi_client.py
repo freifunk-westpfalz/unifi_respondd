@@ -123,7 +123,7 @@ def get_infos():
     except Exception as ex:
         logger.error("Error: %s" % (ex))
         return
-    geolookup = Nominatim(user_agent="ffmuc_respondd")
+    geolookup = Nominatim(user_agent="ffwp_respondd")
     aps = Accesspoints(accesspoints=[])
     for site in c.get_sites():
         if cfg.version == "UDMP-unifiOS":
@@ -197,7 +197,7 @@ def get_infos():
                                 neighbour_macs.append(lldp_entry.get("chassis_id"))
                     aps.accesspoints.append(
                         Accesspoint(
-                            name=ap.get("name", None),
+                            name=cfg.prefix + ap.get("name", None) if cfg.prefix else ap.get("name", None),
                             mac=ap.get("mac", None),
                             snmp_location=ap.get("snmp_location", None),
                             client_count=client_count,
@@ -222,7 +222,7 @@ def get_infos():
                             gateway_nexthop=offloader_id,
                             neighbour_macs=neighbour_macs,
                             domain_code=offloader.get(
-                                "domain", "ffmuc_unifi_respondd_fallback"
+                                "domain", "ffwp_unifi_respondd_fallback"
                             ),
                         )
                     )
