@@ -187,6 +187,12 @@ def get_infos():
                         offloader_id = None
                         offloader = {}
                         pass
+                    try:
+                        prefix = cfg.site_prefix.get(site["desc"])
+                    except AttributeError:
+                        prefix = ""
+        
+
                     uplink = ap.get("uplink", None)
                     if uplink is not None and uplink.get("ap_mac", None) is not None:
                         neighbour_macs.append(uplink.get("ap_mac"))
@@ -197,7 +203,7 @@ def get_infos():
                                 neighbour_macs.append(lldp_entry.get("chassis_id"))
                     aps.accesspoints.append(
                         Accesspoint(
-                            name=cfg.prefix + ap.get("name", None) if cfg.prefix else ap.get("name", None),
+                            name=prefix + ap.get("name", None),
                             mac=ap.get("mac", None),
                             snmp_location=ap.get("snmp_location", None),
                             client_count=client_count,

@@ -6,6 +6,9 @@ ssid_regex: .*freifunk.*
 offloader_mac:
     SiteName: 00:00:00:00:00:00 # SiteName refers to the Site in the Unifi Controller, Mac to the freifunk Offloader
     SiteName2: 00:00:00:00:00:00
+site_prefix: 
+    SiteName: ffwp-Node-Prefix-
+    SiteName2: ffwp2-Node-Prefix-
 nodelist: https://MAPURL/data/meshviewer.json
 prefix: # If the APs name should get a prefix, add it here
 version: v5

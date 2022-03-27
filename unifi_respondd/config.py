@@ -34,6 +34,7 @@ class Config:
     password: str
     ssid_regex: str
     offloader_mac: Dict[str, str]
+    site_prefix: Dict[str,str]
     nodelist: str
 
     multicast_address: str
@@ -43,7 +44,6 @@ class Config:
     interface: str
     verbose: bool = False
     multicast_enabled: bool = True
-    prefix: str = ""
 
     version: str = "v5"
     ssl_verify: bool = True
@@ -64,7 +64,7 @@ class Config:
             password=cfg["password"],
             ssid_regex=cfg["ssid_regex"],
             offloader_mac=cfg["offloader_mac"],
-            prefix=cfg["prefix"],
+            site_prefix=cfg["site_prefix"],
             nodelist=cfg["nodelist"],
             version=cfg["version"],
             ssl_verify=cfg["ssl_verify"],
