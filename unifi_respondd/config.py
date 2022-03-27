@@ -43,6 +43,7 @@ class Config:
     interface: str
     verbose: bool = False
     multicast_enabled: bool = True
+    prefix: str = ""
 
     version: str = "v5"
     ssl_verify: bool = True
@@ -63,6 +64,7 @@ class Config:
             password=cfg["password"],
             ssid_regex=cfg["ssid_regex"],
             offloader_mac=cfg["offloader_mac"],
+            prefix=cfg["prefix"],
             nodelist=cfg["nodelist"],
             version=cfg["version"],
             ssl_verify=cfg["ssl_verify"],
